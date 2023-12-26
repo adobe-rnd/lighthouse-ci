@@ -25,7 +25,7 @@ export function parseStringAsLhr(s) {
 
   if (s.trim().charAt(0) === '{') {
     try {
-      const lhr = JSON.parse(s);
+      const lhr = JSON.parse(s).lighthouseResult;
       if (lhr.lighthouseVersion) return lhr;
       return new Error(`JSON did not contain a lighthouseVersion`);
     } catch (err) {
